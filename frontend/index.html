@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-icon">&#9646;&#9646;</span>
+      <span class="logo-text">SocialHub</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active" data-view="dashboard">
+        <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+        Dashboard
+      </a>
+      <a href="#" class="nav-item" data-view="feed">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10 0h2v2h-2zm-6-4h8v2h-8z"/></svg>
+        Unified Feed
+      </a>
+      <div class="nav-section-label">Platforms</div>
+      <a href="#" class="nav-item" data-view="meta">
+        <svg viewBox="0 0 24 24" class="icon-meta"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        Facebook
+      </a>
+      <a href="#" class="nav-item" data-view="instagram">
+        <svg viewBox="0 0 24 24" class="icon-ig"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+      <a href="#" class="nav-item" data-view="threads">
+        <svg viewBox="0 0 24 24" class="icon-threads"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.skateboard-.6-1.016-.867-1.823-.872-.68 0-1.44.19-1.962.624l-1.278-1.564C10.008 5.23 11.095 4.87 12.182 4.87c1.56 0 2.756.57 3.554 1.694.666.931 1.026 2.227 1.07 3.854.35.163.685.344 1 .544 1.276.795 2.155 1.858 2.61 3.048.76 1.979.735 4.957-1.888 7.499C16.87 23.196 14.752 23.98 12.186 24zm.024-9.61c-.036 0-.073 0-.11.002-1.543.087-2.396.82-2.348 1.97.025.596.327 1.075.852 1.397.558.344 1.299.49 2.107.446 1.143-.062 2.578-.52 2.949-3.8a11.306 11.306 0 0 0-3.45-.015z"/></svg>
+        Threads
+      </a>
+      <a href="#" class="nav-item" data-view="youtube">
+        <svg viewBox="0 0 24 24" class="icon-yt"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        YouTube
+      </a>
+      <div class="nav-section-label">Settings</div>
+      <a href="#" class="nav-item" data-view="settings">
+        <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+        Settings
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main">
+    <header class="topbar">
+      <h1 class="page-title" id="pageTitle">Dashboard</h1>
+      <div class="topbar-actions">
+        <button class="btn-refresh" id="btnRefresh">
+          <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+          Refresh
+        </button>
+        <span class="last-updated" id="lastUpdated">Never</span>
+      </div>
+    </header>
+
+    <!-- Dashboard view -->
+    <section id="view-dashboard" class="view active">
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-card skeleton" id="card-meta">
+          <div class="stat-card-header">
+            <div class="platform-badge meta">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            </div>
+            <span class="platform-name">Facebook</span>
+          </div>
+          <div class="stat-main"><span class="stat-number" id="meta-followers">—</span><span class="stat-label">Followers</span></div>
+          <div class="stat-row"><span class="stat-sub-label">Fans</span><span class="stat-sub-value" id="meta-fans">—</span></div>
+          <div class="stat-row"><span class="stat-sub-label">Impressions</span><span class="stat-sub-value" id="meta-impressions">—</span></div>
+          <div class="stat-row"><span class="stat-sub-label">Engagements</span><span class="stat-sub-value" id="meta-engagements">—</span></div>
+        </div>
+
+        <div class="stat-card skeleton" id="card-instagram">
+          <div class="stat-card-header">
+            <div class="platform-badge instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </div>
+            <span class="platform-name">Instagram</span>
+          </div>
+          <div class="stat-main"><span class="stat-number" id="ig-followers">—</span><span class="stat-label">Followers</span></div>
+          <div class="stat-row"><span class="stat-sub-label">Following</span><span class="stat-sub-value" id="ig-following">—</span></div>
+          <div class="stat-row"><span class="stat-sub-label">Posts</span><span class="stat-sub-value" id="ig-posts">—</span></div>
+          <div class="stat-row"><span class="stat-sub-label">Reach</span><span class="stat-sub-value" id="ig-reach">—</span></div>
+        </div>
+
+        <div class="stat-card skeleton" id="card-threads">
+          <div class="stat-card-header">
+            <div class="platform-badge threads">
+              <svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.6-.867-1.016-.867-1.823-.872-.68 0-1.44.19-1.962.624l-1.278-1.564C10.008 5.23 11.095 4.87 12.182 4.87c1.56 0 2.756.57 3.554 1.694.666.931 1.026 2.227 1.07 3.854.35.163.685.344 1 .544 1.276.795 2.155 1.858 2.61 3.048.76 1.979.735 4.957-1.888 7.499C16.87 23.196 14.752 23.98 12.186 24zm.024-9.61c-.036 0-.073 0-.11.002-1.543.087-2.396.82-2.348 1.97.025.596.327 1.075.852 1.397.558.344 1.299.49 2.107.446 1.143-.062 2.578-.52 2.949-3.8a11.306 11.306 0 0 0-3.45-.015z"/></svg>
+            </div>
+            <span class="platform-name">Threads</span>
+          </div>
+          <div class="stat-main"><span class="stat-number" id="th-followers">—</span><span class="stat-label">Followers</span></div>
+          <div class="stat-row"><span class="stat-sub-label">Views</span><span class="stat-sub-value" id="th-views">—</span></div>
+          <div class="stat-row"><span class="stat-sub-label">Likes</span><span class="stat-sub-value" id="th-likes">—</span></div>
+          <div class="stat-row"><span class="stat-sub-label">Replies</span><span class="stat-sub-value" id="th-replies">—</span></div>
+        </div>
+
+        <div class="stat-card skeleton" id="card-youtube">
+          <div class="stat-card-header">
+            <div class="platform-badge youtube">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <span class="platform-name">YouTube</span>
+          </div>
+          <div class="stat-main"><span class="stat-number" id="yt-subscribers">—</span><span class="stat-label">Subscribers</span></div>
+          <div class="stat-row"><span class="stat-sub-label">Total Views</span><span class="stat-sub-value" id="yt-views">—</span></div>
+          <div class="stat-row"><span class="stat-sub-label">Videos</span><span class="stat-sub-value" id="yt-videos">—</span></div>
+        </div>
+      </div>
+
+      <div class="section-title">Recent Activity</div>
+      <div id="dashboardFeed" class="feed-container"></div>
+    </section>
+
+    <!-- Unified Feed view -->
+    <section id="view-feed" class="view">
+      <div class="feed-filters">
+        <button class="filter-btn active" data-platform="all">All</button>
+        <button class="filter-btn" data-platform="meta">Facebook</button>
+        <button class="filter-btn" data-platform="instagram">Instagram</button>
+        <button class="filter-btn" data-platform="threads">Threads</button>
+        <button class="filter-btn" data-platform="youtube">YouTube</button>
+      </div>
+      <div id="unifiedFeed" class="feed-container"></div>
+    </section>
+
+    <!-- Platform-specific views -->
+    <section id="view-meta" class="view">
+      <div id="metaDetail" class="platform-detail"></div>
+    </section>
+    <section id="view-instagram" class="view">
+      <div id="igDetail" class="platform-detail"></div>
+    </section>
+    <section id="view-threads" class="view">
+      <div id="threadsDetail" class="platform-detail"></div>
+    </section>
+    <section id="view-youtube" class="view">
+      <div id="ytDetail" class="platform-detail"></div>
+    </section>
+
+    <!-- Settings view -->
+    <section id="view-settings" class="view">
+      <div class="settings-card">
+        <h2>Platform Credentials</h2>
+        <p class="settings-hint">Credentials are stored in memory only. For persistence, edit <code>.env</code> in the backend folder.</p>
+
+        <div class="settings-group">
+          <div class="settings-group-title meta-color">Facebook / Instagram / Threads</div>
+          <label>Page ID (Facebook)</label>
+          <input type="text" id="cfg-meta_page_id" placeholder="e.g. 123456789" />
+          <label>IG User ID</label>
+          <input type="text" id="cfg-ig_user_id" placeholder="e.g. 17841400000000000" />
+          <label>Threads User ID</label>
+          <input type="text" id="cfg-threads_user_id" placeholder="e.g. 17841400000000000" />
+          <label>Meta Access Token (shared)</label>
+          <input type="password" id="cfg-meta_access_token" placeholder="EAAxxxx..." />
+        </div>
+
+        <div class="settings-group">
+          <div class="settings-group-title yt-color">YouTube</div>
+          <label>Channel ID</label>
+          <input type="text" id="cfg-youtube_channel_id" placeholder="UCxxxxxx..." />
+          <label>API Key</label>
+          <input type="password" id="cfg-youtube_api_key" placeholder="AIzaSy..." />
+        </div>
+
+        <button class="btn-save" id="btnSaveConfig">Save &amp; Refresh</button>
+        <span class="save-status" id="saveStatus"></span>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
