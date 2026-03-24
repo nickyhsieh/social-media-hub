@@ -3,6 +3,7 @@ Social Media Hub — Flask Backend
 Aggregates Meta, Instagram, Threads, and YouTube into one API.
 """
 import os
+import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from flask import Flask, jsonify, request, send_from_directory
@@ -26,8 +27,10 @@ def add_cors(response):
 def options_handler(p):
     return "", 204
 
-# ── In-memory config ──────────────────────────────────────────
-_config: dict = {
+# ── Persistent config (survives restarts) ─────────────────────
+CONFIG_FILE = os.path.join(os.path.dirname(__file__), "config.json")
+
+_DEFAULTS = {
     "meta_page_id":       os.getenv("META_PAGE_ID", ""),
     "meta_access_token":  os.getenv("META_ACCESS_TOKEN", ""),
     "ig_user_id":         os.getenv("IG_USER_ID", ""),
@@ -35,6 +38,27 @@ _config: dict = {
     "youtube_channel_id": os.getenv("YOUTUBE_CHANNEL_ID", ""),
     "youtube_api_key":    os.getenv("YOUTUBE_API_KEY", ""),
 }
+
+def _load_config() -> dict:
+    cfg = dict(_DEFAULTS)
+    if os.path.exists(CONFIG_FILE):
+        try:
+            saved = json.loads(open(CONFIG_FILE).read())
+            for k, v in saved.items():
+                if k in cfg and v:
+                    cfg[k] = v
+        except Exception:
+            pass
+    return cfg
+
+def _save_config(cfg: dict):
+    try:
+        with open(CONFIG_FILE, "w") as f:
+            json.dump(cfg, f)
+    except Exception:
+        pass
+
+_config: dict = _load_config()
 
 
 def cfg(key):
@@ -57,6 +81,7 @@ def update_config():
     for k, v in data.items():
         if k in _config and v:
             _config[k] = v
+    _save_config(_config)
     return jsonify({"status": "ok"})
 
 
