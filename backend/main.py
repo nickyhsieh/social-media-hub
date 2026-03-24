@@ -196,5 +196,6 @@ def static_files(filename):
 
 
 if __name__ == "__main__":
-    print("\n  Social Media Hub running at http://localhost:8000\n")
-    app.run(host="0.0.0.0", port=8000, debug=False)
+    port = int(os.getenv("PORT", 8000))
+    print(f"\n  Social Media Hub running at http://localhost:{port}\n")
+    app.run(host="0.0.0.0", port=port, debug=False)
