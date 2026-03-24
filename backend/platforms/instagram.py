@@ -11,15 +11,17 @@ def get_account_stats(ig_user_id: str, access_token: str) -> dict:
             params={"fields": "id,username,name,biography,followers_count,follows_count,media_count,profile_picture_url", "access_token": access_token},
         ).raise_for_status().json()
 
-        insights_data = client.get(
-            f"{GRAPH_BASE}/{ig_user_id}/insights",
-            params={"metric": "reach,impressions,profile_views", "period": "day", "access_token": access_token},
-        ).raise_for_status().json().get("data", [])
-
-    insights = {}
-    for item in insights_data:
-        values = item.get("values", [])
-        insights[item["name"]] = values[-1].get("value", 0) if values else 0
+        insights = {}
+        try:
+            insights_data = client.get(
+                f"{GRAPH_BASE}/{ig_user_id}/insights",
+                params={"metric": "reach,impressions,profile_views", "period": "day", "access_token": access_token},
+            ).raise_for_status().json().get("data", [])
+            for item in insights_data:
+                values = item.get("values", [])
+                insights[item["name"]] = values[-1].get("value", 0) if values else 0
+        except Exception:
+            pass
 
     return {
         "platform": "instagram",
