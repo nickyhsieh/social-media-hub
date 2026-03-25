@@ -28,15 +28,24 @@ def get_page_stats(page_id: str, access_token: str) -> dict:
             params={"fields": "id,name,fan_count,followers_count,picture", "access_token": page_token},
         ).raise_for_status().json()
 
+        # Use the fields-based insights format (works in Graph API v18+)
         insights = {}
         try:
-            insights_data = client.get(
-                f"{GRAPH_BASE}/{page_id}/insights",
-                params={"metric": "page_impressions,page_engaged_users,page_post_engagements", "period": "day", "access_token": page_token},
-            ).raise_for_status().json().get("data", [])
-            for item in insights_data:
-                values = item.get("values", [])
-                insights[item["name"]] = values[-1].get("value", 0) if values else 0
+            fields = (
+                "insights.metric(page_views_total).period(week),"
+                "insights.metric(page_post_engagements).period(week),"
+                "insights.metric(page_fan_adds_unique).period(week)"
+            )
+            data = client.get(
+                f"{GRAPH_BASE}/{page_id}",
+                params={"fields": fields, "access_token": page_token},
+            ).raise_for_status().json()
+            for key in ("page_views_total", "page_post_engagements", "page_fan_adds_unique"):
+                block = data.get("insights", {})
+                for item in block.get("data", []):
+                    if item.get("name") == key:
+                        values = item.get("values", [])
+                        insights[key] = values[-1].get("value", 0) if values else 0
         except Exception:
             pass
 
@@ -47,9 +56,9 @@ def get_page_stats(page_id: str, access_token: str) -> dict:
         "followers": info.get("followers_count", 0),
         "fans": info.get("fan_count", 0),
         "picture": info.get("picture", {}).get("data", {}).get("url"),
-        "impressions": insights.get("page_impressions", 0),
-        "engaged_users": insights.get("page_engaged_users", 0),
-        "post_engagements": insights.get("page_post_engagements", 0),
+        "page_views_weekly": insights.get("page_views_total", 0),
+        "post_engagements_weekly": insights.get("page_post_engagements", 0),
+        "new_fans_weekly": insights.get("page_fan_adds_unique", 0),
     }
 
 
